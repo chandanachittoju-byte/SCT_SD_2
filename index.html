@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>3D Guess the Number Game</title>
+
+    <!-- Connect CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background 3D shapes -->
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    <div class="shape shape3"></div>
+
+    <!-- Game container -->
+    <div class="game-container">
+
+        <h1>Guess the Number</h1>
+
+        <p class="subtitle">
+            Guess a number between 1 and 100
+        </p>
+
+        <!-- Hidden number until the user wins -->
+        <div class="number-box" id="numberBox">
+            ?
+        </div>
+
+        <!-- User input -->
+        <input
+            type="number"
+            id="guessInput"
+            placeholder="Enter your guess"
+            min="1"
+            max="100"
+            autocomplete="off"
+        >
+
+        <!-- Check button -->
+        <button id="checkButton">
+            🎯 Check Guess
+        </button>
+
+        <!-- Message -->
+        <div id="message"></div>
+
+        <!-- Attempts -->
+        <div class="attempts">
+            Attempts:
+            <span id="attemptCount">0</span>
+        </div>
+
+        <!-- Play again button -->
+        <button id="restartButton" class="restart-button">
+            🔄 Play Again
+        </button>
+
+    </div>
+
+    <!-- Connect JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

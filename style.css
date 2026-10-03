@@ -1,0 +1,427 @@
+/* Remove default spacing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page */
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f0c29,
+            #302b63,
+            #24243e
+        );
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   GAME CONTAINER
+   ========================= */
+
+.game-container {
+    width: 420px;
+    max-width: 90%;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.2);
+
+    transform: perspective(1000px) rotateX(3deg);
+
+    position: relative;
+    z-index: 10;
+}
+
+
+/* =========================
+   TITLE
+   ========================= */
+
+h1 {
+    font-size: 42px;
+
+    margin-bottom: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff00cc,
+            #3333ff,
+            #00ffff,
+            #00ff88
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+.subtitle {
+    color: #dddddd;
+
+    margin-bottom: 30px;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   NUMBER BOX
+   ========================= */
+
+.number-box {
+    width: 150px;
+    height: 150px;
+
+    margin: 25px auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 20px;
+
+    font-size: 60px;
+    font-weight: bold;
+
+    color: #00ffff;
+
+    background:
+        linear-gradient(
+            145deg,
+            #29245c,
+            #171435
+        );
+
+    text-shadow:
+        0 0 20px #00ffff;
+
+    box-shadow:
+        10px 10px 20px rgba(0, 0, 0, 0.5),
+        -5px -5px 15px rgba(255, 255, 255, 0.08);
+
+    transform:
+        perspective(500px)
+        rotateY(-8deg);
+
+    transition: 0.3s;
+}
+
+
+/* =========================
+   INPUT
+   ========================= */
+
+input {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 2px solid transparent;
+    outline: none;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    box-shadow:
+        inset 4px 4px 8px rgba(0, 0, 0, 0.3),
+        inset -3px -3px 8px rgba(255, 255, 255, 0.1);
+
+    transition: 0.3s;
+}
+
+
+input::placeholder {
+    color: #cccccc;
+}
+
+
+input:focus {
+    border-color: #00ffff;
+
+    box-shadow:
+        0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+
+/* Remove number input arrows */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* =========================
+   BUTTON
+   ========================= */
+
+button {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    color: white;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff00cc,
+            #3333ff
+        );
+
+    box-shadow:
+        0 8px 0 #18104f,
+        0 15px 25px rgba(0, 0, 0, 0.4);
+
+    transition: 0.2s;
+}
+
+
+button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 11px 0 #18104f,
+        0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+button:active {
+    transform: translateY(5px);
+
+    box-shadow:
+        0 3px 0 #18104f,
+        0 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Disabled button */
+button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.5;
+
+    transform: none;
+
+    box-shadow:
+        0 4px 0 #18104f;
+}
+
+
+/* =========================
+   MESSAGE
+   ========================= */
+
+#message {
+    min-height: 30px;
+
+    margin-top: 25px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+.success {
+    color: #00ff88;
+
+    text-shadow:
+        0 0 15px #00ff88;
+}
+
+
+.higher {
+    color: #ffcc00;
+
+    text-shadow:
+        0 0 15px #ffcc00;
+}
+
+
+.lower {
+    color: #ff4d6d;
+
+    text-shadow:
+        0 0 15px #ff4d6d;
+}
+
+
+.error {
+    color: #ff4d6d;
+
+    text-shadow:
+        0 0 15px #ff4d6d;
+}
+
+
+/* =========================
+   ATTEMPTS
+   ========================= */
+
+.attempts {
+    margin-top: 15px;
+
+    color: #aaaaaa;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   RESTART BUTTON
+   ========================= */
+
+.restart-button {
+    background:
+        linear-gradient(
+            135deg,
+            #00c6ff,
+            #0072ff
+        );
+}
+
+
+/* =========================
+   3D FLOATING SHAPES
+   ========================= */
+
+.shape {
+    position: fixed;
+
+    width: 80px;
+    height: 80px;
+
+    border-radius: 20px;
+
+    opacity: 0.2;
+
+    z-index: 1;
+
+    animation:
+        float 6s infinite ease-in-out;
+}
+
+
+.shape1 {
+    background: #ff00cc;
+
+    top: 10%;
+    left: 10%;
+}
+
+
+.shape2 {
+    background: #00ffff;
+
+    bottom: 10%;
+    right: 10%;
+
+    animation-delay: 2s;
+}
+
+
+.shape3 {
+    background: #00ff88;
+
+    top: 20%;
+    right: 15%;
+
+    animation-delay: 4s;
+}
+
+
+/* =========================
+   FLOAT ANIMATION
+   ========================= */
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-40px)
+            rotate(180deg);
+    }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 500px) {
+
+    .game-container {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .number-box {
+        width: 120px;
+        height: 120px;
+
+        font-size: 50px;
+    }
+}
